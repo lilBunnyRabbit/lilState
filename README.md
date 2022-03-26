@@ -1,4 +1,4 @@
-# lilState
+# [liLState](https://lilbunnyrabbit.github.io/lilstate/)
 JavaScript library for state management.
 
 ## Installation
