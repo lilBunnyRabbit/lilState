@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body>
+    <div class="page">
+      <div class="sidebar" id="sidebar">
+        aaa
+      </div>
+      <div class="page-body">{{ content }}</div>
+    </div>
+
+    <script>
+      document.getElementById("sidebar").addEventListener("click", (e) => {
+        e.target.classList.toggle("closed");
+      })
+    </script>
+  </body>
+</html>

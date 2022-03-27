@@ -1,0 +1,171 @@
+/* Roboto */
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-Thin.ttf);
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-Black.ttf);
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Roboto - Italic */
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-ThinItalic.ttf);
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-LightItalic.ttf);
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-Italic.ttf);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-MediumItalic.ttf);
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRoboto;
+  src: url(./roboto/Roboto-BlackItalic.ttf);
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Roboto Mono */
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-Thin.ttf);
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-Black.ttf);
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Roboto Mono - Italic */
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-ThinItalic.ttf);
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-LightItalic.ttf);
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-Italic.ttf);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-MediumItalic.ttf);
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: GoogleRobotoMono;
+  src: url(./roboto-mono/RobotoMono-BlackItalic.ttf);
+  font-weight: 900;
+  font-style: italic;
+}

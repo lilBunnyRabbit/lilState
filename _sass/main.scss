@@ -1,0 +1,46 @@
+
+/*https://github.com/StylishThemes/Syntax-Themes/tree/master/pygments/css-github*/
+@import "theme";
+@import "rouge";
+@import "markdown";
+
+@import "sidebar";
+
+html {
+  // background: red;
+  // font-size: 32px;
+  font-family: GoogleRoboto;
+  font-size: 16px;
+  color: $text;
+  background-color: $background;
+}
+
+body {
+  margin: 0px;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid blue;
+  overflow-y: auto;
+  padding: 16px;
+  box-sizing: border-box;
+}

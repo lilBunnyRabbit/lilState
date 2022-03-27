@@ -1,0 +1,151 @@
+pre.highlight {
+  background: $code !important;
+  padding: 16px;
+  border-radius: 8px;
+  // margin: 0px;
+}
+
+code {
+  font-family: GoogleRobotoMono;
+  font-size: 13px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0px;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+strong {
+  // font-family: Roboto-Bold;
+}
+
+a {
+  color: $primary;
+}
+
+blockquote {
+  margin: 16px 0px;
+  border-left: 4px solid $primary;
+  box-sizing: border-box;
+  background: $code;
+  border-radius: 0px 8px 8px 0px;
+  padding: 8px 16px;
+
+  p {
+    margin-top: 0px;
+
+    &:first-child {
+      font-size: 20px;
+      color: $primary;
+      border-bottom: 1px solid $primary;
+      font-weight: bold;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+e-type {
+  color: $secondary;
+  font-weight: normal;
+
+  &::before {
+    content: ": ";
+    color: $text;
+  }
+}
+
+// Components
+.component-method {
+  color: $primary;
+  display: flex;
+  font-weight: bold;
+
+  .argument {
+    font-weight: normal;
+    color: $text-faded !important;
+  }
+}
+
+// Misc
+.class-extends {
+  color: $primary;
+  font-weight: 500;
+
+  &::before {
+    content: "extends ";
+    font-weight: bold;
+    color: $text;
+  }
+}
+
+.argument-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px;
+  margin: 16px 0px;
+
+  thead {
+    background: transparent;
+    tr {
+      th {
+        padding: 8px 16px;
+        background: $secondary;
+
+        &:first-child {
+          border-radius: 8px 0px 0px 0px;
+        }
+  
+        &:last-child {
+          border-radius: 0px 8px 0px 0px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 8px 16px;
+        background: $code;
+        border-bottom: 1px solid $secondary;
+
+        &:first-child {
+          border-left: 1px solid $secondary;
+        }
+  
+        &:last-child {
+          border-right: 1px solid $secondary;
+        }
+      }
+
+      &:last-child {
+        td {
+          &:first-child {
+            border-radius: 0px 0px 0px 8px;
+          }
+          
+          &:last-child {
+            border-radius: 0px 0px 8px 0px;
+          }
+        }
+      }
+    }
+  }
+}
