@@ -1,9 +1,23 @@
 author: lilBunnyRabbit
+title: lilState
 markdown: kramdown 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 exclude:
   - .devcontainer/
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+baseurl: "/lilstate"
 sass:
   sass_dir: _sass
+
+collections_dir: docs
+collections:
+  latest:
+    output: true
+    permalink: /docs/:collection/:path/
+  "0.0.0":
+    output: true
+    permalink: /docs/:collection/:path/

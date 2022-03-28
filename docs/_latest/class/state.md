@@ -1,8 +1,9 @@
 ---
-layout: docs
+layout: doc
+category: class
 ---
 
-# State v0.0.0
+# State
 
 EventTarget
 {: .class-extends}  
@@ -15,11 +16,11 @@ Class representing main control unit for state management.
 new lilState.State(config, initElements);
 ```  
   
-| Argument | Type              | Optional | Default | Description |
-| :------- | :---------------- | :------: | :------ | :---------- |
-| config   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
-| config   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
-| config   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
+| Argument | Type              | Optional | Default | Description                |
+| :------- | :---------------- | :------: | :------ | :------------------------- |
+| config   | [StateConfig](./) |    ✔️     |         | [State](./) configuration. |
+| config   | [StateConfig](./) |    ✔️     |         | [State](./) configuration. |
+| config   | [StateConfig](./) |    ✔️     |         | [State](./) configuration. |
 {: .argument-table}
 
 ## Properties
@@ -29,7 +30,7 @@ new lilState.State(config, initElements);
 > List of [StateElement](./)'s.  
 > Tralala.
 >
-> Retursn void.
+> Returns void.
 
 > .elements
 > 
@@ -43,13 +44,18 @@ new lilState.State(config, initElements);
 > | config   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
 > {: .argument-table}
 >
-> Retursn void.
+> Returns void.
 
 ## Methods
 
-> {% include components/method.html name=".example" arguments="a,b,c,d" %}
+> .set(key, value)
 > 
-> Tralala Hopsasa
+> List of [StateElement](./)'s.  
+> Tralala.
+>
+> Returns void.
+
+## Example
 
 ```js
 const example = (assert) => {

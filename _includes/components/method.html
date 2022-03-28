@@ -1,11 +1,12 @@
 {% assign arguments = include.arguments | split: "," %}
-<p class="component-method">
-  {{ include.name }}(
-  {% for argument in arguments %}
+<blockquote>
+  <p class="component-method">
+    {{ include.name }}(
+    {% for argument in arguments %}
     <span class="argument">{{ argument }}</span>
     {% if forloop.last == false %}
-      <span>,&nbsp;</span>
+    <span>,&nbsp;</span>
     {% endif %}
-  {% endfor %}
-  )
-</p>
+    {% endfor %}
+    )
+  </p>

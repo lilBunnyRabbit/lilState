@@ -1,8 +1,12 @@
-pre.highlight {
-  background: $code !important;
-  padding: 16px;
-  border-radius: 8px;
-  // margin: 0px;
+.highlight {
+  background: transparent !important;
+
+  pre {
+    background: $code !important;
+    padding: 16px;
+    border-radius: 8px;
+    // margin: 0px;
+  }
 }
 
 code {
@@ -20,13 +24,19 @@ h6 {
 }
 
 h1 {
-  margin-top: 0px;
-  margin-bottom: 8px;
+  margin-top: 32px;
+  margin-bottom: 0px;
+
+  &:first-child {
+    margin-top: 0px;
+  }
 }
 
 h2 {
-  margin-top: 32px;
+  margin-top: 24px;
   margin-bottom: 16px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid $text;
 }
 
 strong {
@@ -34,14 +44,26 @@ strong {
 }
 
 a {
+  color: $link;
+}
+
+// Components
+.component-method {
   color: $primary;
+  display: flex;
+  font-weight: bold;
+
+  .argument {
+    font-weight: normal;
+    color: $text-faded !important;
+  }
 }
 
 blockquote {
   margin: 16px 0px;
   border-left: 4px solid $primary;
   box-sizing: border-box;
-  background: $code;
+  background: $foreground;
   border-radius: 0px 8px 8px 0px;
   padding: 8px 16px;
 
@@ -58,28 +80,6 @@ blockquote {
     &:last-child {
       margin-bottom: 0px;
     }
-  }
-}
-
-e-type {
-  color: $secondary;
-  font-weight: normal;
-
-  &::before {
-    content: ": ";
-    color: $text;
-  }
-}
-
-// Components
-.component-method {
-  color: $primary;
-  display: flex;
-  font-weight: bold;
-
-  .argument {
-    font-weight: normal;
-    color: $text-faded !important;
   }
 }
 
