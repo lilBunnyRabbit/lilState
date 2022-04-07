@@ -1,0 +1,68 @@
+---
+test: true
+scripts:
+- src: https://lilbunnyrabbit.github.io/cdn/libs/lilstate/0.0.0/lilstate.min.js
+---
+<h1>Tests</h1>
+
+<script>
+  genTests((test) => {
+    test("Can access all objects", (assert) => {
+      const { State, StateElement, StateComponent } = lilState;
+
+      assert.defined(State, "State");
+      assert.defined(StateElement, "StateElement");
+      assert.defined(StateComponent, "StateComponent");
+    });
+
+    const { State, StateElement, StateComponent } = lilState;
+
+    test("Can create State", (assert) => {
+      const state = new State({});
+      assert.defined(state);
+    });
+
+    test("Can create State with configuration", (assert) => {
+      const config = {
+        useChangeEvent: true,
+        useLogs: false,
+      };
+
+      const state = new State(config);
+      const stateConfig = state.config;
+
+      Object.keys(config).forEach((key) => {
+        assert.equal(stateConfig[key], config[key], `config["${key}"]`);
+      });
+    });
+
+    test("Can create State with initial elements", (assert) => {
+      const state = new State(
+        {},
+        {
+          test: {
+            defaultValue: 123,
+          },
+        }
+      );
+
+      assert.truthy(state.elements.has("test"));
+    });
+
+    test("Can test", (assert) => {
+      const state = new State(
+        {},
+        {
+          test: {
+            defaultValue: 123,
+          },
+        }
+      );
+
+      const stateElement = state.attach("test");
+      stateElement.set(456);
+      stateElement.reset();
+      assert.equal(stateElement.get(), 12356);
+    })
+  });
+</script>

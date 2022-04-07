@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% if page.test %}
+    {% include cdn/highlight.html %}
+    
+    <script src="{{ "/assets/js/test-builder.js?v=" | append: site.github.build_revision | relative_url }}"></script>
+      {% if page.scripts %}
+        {% for script in page.scripts %}
+          <script src="{{ script.src }}"></script>
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  </head>
+  <body class="doc">
+    <script>
+      // TODO: Implement portrait mode
+      // window.addEventListener("resize", () => {
+      //   // Landscape
+      //   if (window.innerWidth > window.innerHeight) {
+      //     if (document.body.classList.contains("portrait")) {
+      //       document.body.classList.remove("portrait");
+      //     }
+      //   } 
+      //   // Portrait
+      //   else {
+      //     if (!document.body.classList.contains("portrait")) {
+      //       document.body.classList.add("portrait");
+      //     }
+      //   }
+      // });
+    </script>
+
+    <script>
+      function selectOnChange(e) {
+        console.log(e);
+        console.log("{{ site.baseurl }}/docs/" + e.options[e.selectedIndex].value);
+        window.location.href = "{{ site.baseurl }}/docs/" + e.options[e.selectedIndex].value
+      }
+    </script>
+
+    {% assign version = page.collection %}
+    {% assign category_groups = site[version] | group_by: "category" | sort: "name" %}
+
+    <div class="sidebar">
+      <div class="sidebar-title">
+        <div>{{ site.title }}</div>
+        <div>
+          <select name="versions" onchange="selectOnChange(this)">
+            {% for collection in site.collections %}
+              {% if collection.label != "posts" %}
+                {% if collection.label == version %}
+                  <option id="{{collection.label}}" selected="true">{{collection.label}}</option>
+                {% else %}
+                  <option id="{{collection.label}}">{{collection.label}}</option>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="sidebar-body">
+        {% for category_group in category_groups %}
+        <div class="section">
+          <div class="section-title">
+            {% if category_group.name == "" %}
+              General
+            {% else %}
+              {{ category_group.name }}
+            {% endif %}
+          </div>
+          <div class="section-body">
+            {% for item in category_group.items %}
+              <div class="section-body-item">
+                <div class="section-body-item-icon">{% include icons/chevron-right.svg %}</div>
+                <div>
+                  {% if item.url == page.url %}
+                    {{ item.title }}
+                  {% else %}
+                    <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="content">
+      <div class="body">{{ content }}</div>
+    </div>
+  </body>
+</html>

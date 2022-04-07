@@ -1,0 +1,21 @@
+<script>
+  function redirect(path) {
+    window.location.href = "{{ site.baseurl }}/" + path;
+  }
+</script>
+
+<div class="navbar">
+  <div class="row">
+    <div class="icon">{% include icons/menu.svg %}</div>
+    <div>{{ site.title }}</div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="redirect('')">Home</button>
+    <button onclick="redirect('docs/latest')">Documentation</button>
+    <button onclick="redirect('changelog')">Changelog</button>
+  </div>
+  <div class="row">
+    {% if site.repo %} <a class="icon" href="{{ site.repo }}">{% include icons/github.svg %}</a> {% endif %}
+  </div>
+</div>

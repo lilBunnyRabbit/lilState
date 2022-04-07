@@ -1,0 +1,65 @@
+.tests {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.test {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: $test-passed;
+  background: $test-passed;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  .title {
+    color: $background;
+    border-bottom: 1px solid inherit;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  .body {
+    box-sizing: border-box;
+    width: 100%;
+    border-color: inherit;
+
+    &.collapsed {
+      display: none;
+    }
+
+    > * {
+      padding: 8px 16px;
+      background: $code;
+      border-bottom: 1px solid;
+      border-color: inherit;
+      font-size: 14px;
+      overflow: auto;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    pre {
+      margin: 0px;
+    }
+  }
+
+  &.failed {
+    border-color: $test-failed;
+    background: $test-failed;
+  }
+}

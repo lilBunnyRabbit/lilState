@@ -1,59 +1,52 @@
 ---
-layout: doc
-category: class
+category: classes
 ---
 
 # State
 
-EventTarget
+[EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
 {: .class-extends}  
 
 Class representing main control unit for state management.
-
 ## Constructor
 
 ```js
 new lilState.State(config, initElements);
 ```  
   
-| Argument | Type              | Optional | Default | Description                |
-| :------- | :---------------- | :------: | :------ | :------------------------- |
-| config   | [StateConfig](./) |    ✔️     |         | [State](./) configuration. |
-| config   | [StateConfig](./) |    ✔️     |         | [State](./) configuration. |
-| config   | [StateConfig](./) |    ✔️     |         | [State](./) configuration. |
+| Argument | Type                                    | Optional | Default | Description                |
+| :------- | :-------------------------------------- | :------: | :------ | :------------------------- |
+| config   | [StateConfig](../../types/state-config) |    ✔️     |         | [State](./) configuration. |
+| config   | [StateConfig](./)                       |    ✔️     |         | [State](./) configuration. |
+| config   | [StateConfig](./)                       |    ✔️     |         | [State](./) configuration. |
 {: .argument-table}
 
 ## Properties
 
-> .elements
+> elements
 > 
 > List of [StateElement](./)'s.  
 > Tralala.
 >
-> Returns void.
+> void
+{: .property-block }
 
-> .elements
+## Methods
+
+> setElement(<span class="arguments">a, b, c</span>)
 > 
 > List of [StateElement](./)'s.  
 > Tralala.
 > 
 > | Argument | Type              | Optional | Default | Description |
 > | :------- | :---------------- | :------: | :------ | :---------- |
-> | config   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
-> | config   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
-> | config   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
+> | a   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
+> | b   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
+> | c   | [StateConfig](./) | ✔️       |         | [State](./) configuration.|
 > {: .argument-table}
 >
-> Returns void.
-
-## Methods
-
-> .set(key, value)
-> 
-> List of [StateElement](./)'s.  
-> Tralala.
->
-> Returns void.
+> Map<string, [StateElement](./)>
+{:.method-block}
 
 ## Example
 

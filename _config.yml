@@ -1,5 +1,7 @@
 author: lilBunnyRabbit
 title: lilState
+repo: https://github.com/lilBunnyRabbit/lilstate
+
 markdown: kramdown 
 kramdown:
   input: GFM
@@ -21,3 +23,19 @@ collections:
   "0.0.0":
     output: true
     permalink: /docs/:collection/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "latest"
+    values:
+      layout: "doc"
+  - scope:
+      path: ""
+      type: "0.0.0"
+    values:
+      layout: "doc"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

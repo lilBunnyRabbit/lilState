@@ -4,8 +4,10 @@ html {
   padding: 0;
 }
 
-body.docs {
-  width: 100vw;
+$header-height: 44px;
+
+body.doc {
+  width: 100%;
   height: 100vh;
   position: relative;
   display: flex;
@@ -13,108 +15,191 @@ body.docs {
   overflow: hidden;
   box-sizing: border-box;
 
-  .navbar {
+  & > .navbar {
     width: 100%;
+    padding: 8px 16px;
     box-sizing: border-box;
-    background: $primary;
-    padding: 16px;
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 32px;
+  
+    background: $primary;
     color: $background;
-    gap: 16px;
+    font-weight: bold;
+    font-size: 24px;
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      align-items: center;
+    }
 
     .icon {
       display: flex;
       align-items: center;
+      cursor: pointer;
     }
 
-    .title {
-      font-size: 24px;
-      font-weight: 900;
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
       width: 100%;
-    }
 
-    select {
-      padding: 4px 8px;
-      background: $background;
-      color: $text;
-      outline: none;
-      font-family: GoogleRoboto;
-      font-weight: 500;
+      button {
+        border: none;
+        outline: none;
+        background: transparent;
+        color: $background;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 8px;
+        transition: color 250ms, background 250ms;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:checked,
+        &:hover {
+          background: $background-faded;
+          color: $text;
+        }
+      }
     }
   }
 
-  .page {
+  & > .body {
     flex: 1;
     position: relative;
     display: flex;
+    flex-direction: row;
     overflow: hidden;
     box-sizing: border-box;
 
     .sidebar {
-      min-width: 320px;
+      min-width: 250px;
       height: 100%;
       position: relative;
       box-sizing: border-box;
-      overflow-y: auto;
-      border-right: 1px solid $code;
-      padding: 16px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
+      padding: 16px;
       gap: 16px;
+    
       background: $background;
+
+      & > .select {
+        background: $background-faded;
+        color: $text;
+        padding: 8px;
+        border-radius: 8px;
+
+        select {
+          background: inherit;
+          color: inherit;
+          outline: none;
+          font-family: inherit;
+          font-weight: 500;
+          border: none;
+          font-size: 14px;
+          width: 100%;
+          padding: 0px;
+          cursor: pointer;
+        }
+      }
 
       .section {
         width: 100%;
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
         gap: 8px;
-
-        .title {
-          font-weight: bold;
-          font-size: 16px;
-          text-transform: uppercase;
-          border-bottom: 1px solid $text;
-          cursor: pointer;
-          padding: 8px 8px 4px 0px;
-          // background: rgba(255, 255, 255, 0.1);
-          -ms-user-select: none;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
+      }
+  
+      .section-title {
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: uppercase;
+        border-bottom: 1px solid $text;
+        cursor: pointer;
+        padding: 8px 8px 4px 0px;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+  
+      .section-body {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+  
+      .section-body-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 8px;
+        transition: background 250ms;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+  
+        &.active,
+        &:hover {
+          background: $background-faded;
         }
 
-        .body {
-          font-size: 16px;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        &.closed {
-          .title {
-            background: none;
-          }
-
-          .body {
-            display: none;
-          }
+        &.active {
+          color: $text;
         }
       }
     }
-
+  
     .content {
       flex: 1;
       position: relative;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      color: white;
-      padding: 32px;
-      font-size: 16px;
       box-sizing: border-box;
+      padding: 32px;
+      overflow-y: auto;
+      background: $background-faded;
+  
+      .body {
+        position: relative;
+        box-sizing: border-box;
+        max-width: 1000px;
+        margin: auto;
+      }
     }
   }
 }
+
+// TODO: Implement portrait mode
+
+// body.doc2.portrait {
+//   .sidebar {
+//     position: absolute;
+//     top: 0px;
+//     left: 0px;
+//     width: 100%;
+//     height: auto;
+//     z-index: 1;
+//   }
+
+//   .sidebar-body {
+//     transition: max-height 250ms;
+
+//     &.collapsed {
+//       max-height: 0px;
+//     }
+//   }
+
+//   .content {
+//     margin-top: $header-height;
+//   }
+// }

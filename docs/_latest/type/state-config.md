@@ -1,6 +1,5 @@
 ---
-layout: doc
-category: type
+category: types
 ---
 
 # StateConfig

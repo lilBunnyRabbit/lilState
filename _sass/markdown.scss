@@ -5,7 +5,7 @@
     background: $code !important;
     padding: 16px;
     border-radius: 8px;
-    // margin: 0px;
+    border: 1px solid $background;
   }
 }
 
@@ -33,54 +33,39 @@ h1 {
 }
 
 h2 {
-  margin-top: 24px;
+  margin-top: 32px;
   margin-bottom: 16px;
   padding-bottom: 2px;
   border-bottom: 1px solid $text;
-}
-
-strong {
-  // font-family: Roboto-Bold;
 }
 
 a {
   color: $link;
 }
 
-// Components
-.component-method {
-  color: $primary;
-  display: flex;
-  font-weight: bold;
-
-  .argument {
-    font-weight: normal;
-    color: $text-faded !important;
-  }
-}
-
 blockquote {
   margin: 16px 0px;
   border-left: 4px solid $primary;
+  border-right: 1px solid $background;
+  border-top: 1px solid $background;
+  border-bottom: 1px solid $background;
   box-sizing: border-box;
   background: $foreground;
   border-radius: 0px 8px 8px 0px;
   padding: 8px 16px;
 
-  p {
+  * {
     margin-top: 0px;
-
-    &:first-child {
-      font-size: 20px;
-      color: $primary;
-      border-bottom: 1px solid $primary;
-      font-weight: bold;
-    }
 
     &:last-child {
       margin-bottom: 0px;
     }
   }
+}
+
+hr {
+  width: 100%;
+  border-color: $text-faded;
 }
 
 // Misc
@@ -91,7 +76,7 @@ blockquote {
   &::before {
     content: "extends ";
     font-weight: bold;
-    color: $text;
+    color: $text-faded;
   }
 }
 
@@ -148,4 +133,60 @@ blockquote {
       }
     }
   }
+}
+
+.property-block {
+  p {
+    &:first-child {
+      font-size: 18px;
+      color: $primary;
+      border-bottom: 1px solid $primary;
+      font-weight: bold;
+
+      &::before {
+        content: ".";
+      }
+    }
+
+    &:last-child {
+      color: $secondary;
+
+      &::before {
+        content: "Type: ";
+        color: $text-faded;
+      }
+    }
+  }
+}
+
+.method-block {
+  p {
+    &:first-child {
+      font-size: 18px;
+      color: $primary;
+      border-bottom: 1px solid $primary;
+      font-weight: bold;
+
+      &::before {
+        content: ".";
+      }
+
+      &::after {
+        content: attr(data-name);
+      }
+    }
+
+    &:last-child {
+      color: $secondary;
+
+      &::before {
+        content: "Returns: ";
+        color: $text-faded;
+      }
+    }
+  }
+}
+
+.arguments {
+  color: $text-faded;
 }
