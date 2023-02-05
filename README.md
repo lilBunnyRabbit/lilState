@@ -13,7 +13,9 @@ To install it either include the normal or minified script in your HTML file.
 ```
 
 ## Versions
-* [0.0.0](https://lilbunnyrabbit.github.io/cdn/libs/lilstate/0.0.0/docs.html) - `latest`
+* [0.2.0](https://lilbunnyrabbit.github.io/cdn/libs/lilstate/0.2.0/docs.html) - `latest`
+* [0.1.0](https://lilbunnyrabbit.github.io/cdn/libs/lilstate/0.1.0/docs.html)
+* [0.0.0](https://lilbunnyrabbit.github.io/cdn/libs/lilstate/0.0.0/docs.html)
 
 ## Example
 ```js
