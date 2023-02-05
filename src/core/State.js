@@ -11,6 +11,7 @@ export default class State extends EventTarget {
    * @property {boolean} [useChangeEvent] - Dispatch "change" event when any element is updated.
    * @property {boolean} [useLogs] - Enable/disable logging.
    * @property {string} [prefix] - Local storage prefix.
+   * @property {boolean} [useRefetchOnFocus] - Refetch from local storage on window focus if `useLocalStorage` and `useRefetchOnFocus` is set for StateElement.
    */
 
   /**
@@ -46,6 +47,7 @@ export default class State extends EventTarget {
     useChangeEvent: false,
     useLogs: false,
     prefix: "",
+    useRefetchOnFocus: true,
   };
 
   /**
@@ -72,6 +74,23 @@ export default class State extends EventTarget {
         const initElement = initElements[key];
         this.init(key, initElement);
       });
+    }
+
+    if (this.#config.useRefetchOnFocus) {
+      window.addEventListener("focus", () => {
+        this.#elements.forEach((element, key) => {
+          if (element.config.useLocalStorage && element.config.useRefetchOnFocus) {
+            const localValue = localStorage.getItem(this.#prefixKey(key));
+            if (localValue !== null) {
+              try {
+                element.set(this.#valueFromString(localValue, element.type));
+              } catch (error) {
+                console.error(value);
+              }
+            }
+          }
+        })
+      })
     }
   }
 

@@ -10,6 +10,7 @@ export default class StateElement {
    * @property {boolean} [useLocalStorage] - Enable/disable using local storage for storing and retrieving data.
    * @property {boolean} [useEvents] - Enable/disable "change" event for the element.
    * @property {function(StorageValue): StorageValue} [onBeforeSet] - Callback before the value is set.
+   * @property {boolean} [useRefetchOnFocus] - Refetch from local storage on window focus if `useLocalStorage` is set.
    */
 
   /**
@@ -50,12 +51,13 @@ export default class StateElement {
   /**
    * StateElement's configuration.
    * @private
-   * @type {Object}
+   * @type {StateElementConfig}
    */
   #config = {
     useLocalStorage: false,
     useEvents: false,
     onBeforeSet: null,
+    useRefetchOnFocus: true,
   };
 
   /**
