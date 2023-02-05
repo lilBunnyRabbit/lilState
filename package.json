@@ -2,7 +2,7 @@
   "name": "lilstate",
   "title": "lilState",
   "description": "JavaScript library for state management.",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/lilstate.js",
   "homepage": "https://github.com/lilBunnyRabbit/lilstate#readme",
   "author": {

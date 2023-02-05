@@ -10,6 +10,7 @@ export default class State extends EventTarget {
    * @typedef {Object} StateConfig
    * @property {boolean} [useChangeEvent] - Dispatch "change" event when any element is updated.
    * @property {boolean} [useLogs] - Enable/disable logging.
+   * @property {string} [prefix] - Local storage prefix.
    */
 
   /**
@@ -44,6 +45,7 @@ export default class State extends EventTarget {
   #config = {
     useChangeEvent: false,
     useLogs: false,
+    prefix: "",
   };
 
   /**
@@ -95,6 +97,16 @@ export default class State extends EventTarget {
   }
 
   /**
+   * Prefix key with defined prefix.
+   * @param {string} key - Selected key.
+   * @returns {string}
+   */
+  #prefixKey(key) {
+    if (!this.#config.prefix) return key;
+    return `${this.#config.prefix}-${key}`;
+  }
+
+  /**
    * Set value for selected key.
    * @param {string} key - Selected key.
    * @param {StorageValue} value - Value to be stored.
@@ -104,7 +116,7 @@ export default class State extends EventTarget {
     this.#storage.set(key, value);
 
     if (config.useLocalStorage) {
-      localStorage.setItem(key, this.#valueToString(value));
+      localStorage.setItem(this.#prefixKey(key), this.#valueToString(value));
     }
 
     if (config.useEvents) {
@@ -198,7 +210,7 @@ export default class State extends EventTarget {
 
     let value = opts.defaultValue;
     if (opts.config?.useLocalStorage) {
-      const localValue = localStorage.getItem(key);
+      const localValue = localStorage.getItem(this.#prefixKey(key));
       if (localValue !== null) {
         value = this.#valueFromString(localValue, type);
       }
